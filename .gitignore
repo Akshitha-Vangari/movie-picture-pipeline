@@ -1,0 +1,24 @@
+# Environment files
+.env
+.env.*
+
+# Node
+node_modules/
+build/
+coverage/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
+
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.*
