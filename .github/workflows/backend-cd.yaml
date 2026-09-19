@@ -100,3 +100,10 @@ jobs:
           kubectl apply -k k8s/
           kubectl set image deployment/backend backend=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/backend:${{ github.sha }}
           kubectl rollout status deployment/backend
+
+      - name: Get Backend URL
+        run: |
+          kubectl get services -o wide
+          echo "Backend URL:"
+          kubectl get service backend -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
+          echo ""
