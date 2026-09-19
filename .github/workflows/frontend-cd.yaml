@@ -156,6 +156,13 @@ jobs:
         run: |
           kustomize build | kubectl apply -f -
 
+      - name: Get Frontend URL
+        run: |
+          kubectl get service frontend -o wide
+          echo "Frontend URL:"
+          kubectl get service frontend -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
+          echo ""
+
       - name: Verify deployment
         run: |
           kubectl rollout status deployment/frontend --timeout=180s
