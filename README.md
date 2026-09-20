@@ -466,6 +466,41 @@ kustomize edit set image backend=<ECR_REPO_URL>:<NEW_TAG_HERE>
 kustomize build | kubectl apply -f -
 ```
 
+## Deployment and Submission
+
+### GitHub Repository
+
+[Movie Picture Pipeline](https://github.com/Akshitha-Vangari/movie-picture-pipeline)
+
+### Deployed Application URLs
+
+**Frontend Application:**
+
+http://adfc4e9a1c01348c99a071b18e4af279-210457539.us-east-1.elb.amazonaws.com/
+
+The frontend displays the movie list and movie details.
+
+**Backend Application:**
+
+http://a40890b29f9884dbf9b268aaf5b87557-1911386321.us-east-1.elb.amazonaws.com/movies
+
+The backend API returns the list of movies.
+
+### GitHub Actions Workflows
+
+The project includes the following workflows:
+
+1. Backend CI
+2. Backend CD
+3. Frontend CI
+4. Frontend CD
+
+The workflows perform linting, testing, building, and deployment.
+
+### Deployment Evidence
+
+Screenshots demonstrating successful CI/CD workflows and the working frontend and backend applications are provided for review.
+
 ## License
 
 [License](LICENSE.md)
